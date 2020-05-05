@@ -11,3 +11,9 @@ cypress:open
 cypress e2e 
 -  run in headless mode 
 -  uses cypress run --spec to run a specific file
+
+Note:
+
+To run it locally:
+
+npm run cypress:open

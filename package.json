@@ -8,8 +8,8 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "e2e": "cypress run --spec 'cypress/integration/getApiCall.js'",
+    "test": "cypress run --spec 'cypress/integration/getApiCall.js'",
+    "e2e": "cypress run",
     "cypress:open": "cypress open"
   },
   "author": "",
