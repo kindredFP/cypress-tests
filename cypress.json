@@ -1,3 +1,9 @@
 {
- "baseUrl": "https://jsonplaceholder.typicode.com"
+ "baseUrl": "https://jsonplaceholder.typicode.com",
+ "video": false,
+ "reporter": "junit",
+  "reporterOptions": {
+    "mochaFile": "reports/my-test-output.xml",
+    "toConsole": true
+  }
 }

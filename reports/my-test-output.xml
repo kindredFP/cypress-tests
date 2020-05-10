@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Mocha Tests" time="1.2530000000000001" tests="3" failures="0">
+  <testsuite name="Root Suite" timestamp="2020-05-10T19:22:48" tests="0" file="cypress/integration/getApiCall.js" failures="0" time="0">
+  </testsuite>
+  <testsuite name="/posts API" timestamp="2020-05-10T19:22:48" tests="3" failures="0" time="1.2530000000000001">
+    <testcase name="/posts API Headers and content type check" time="0.316" classname="Headers and content type check">
+    </testcase>
+    <testcase name="/posts API Status Code 200 Check" time="0.084" classname="Status Code 200 Check">
+    </testcase>
+    <testcase name="/posts API method, url and body check" time="0.853" classname="method, url and body check">
+    </testcase>
+  </testsuite>
+</testsuites>

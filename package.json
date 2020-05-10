@@ -12,6 +12,6 @@
     "e2e": "cypress run",
     "cypress:open": "cypress open"
   },
-  "author": "",
-  "license": "ISC"
+  "author": "Francis",
+  "license": "MIT"
 }
