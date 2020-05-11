@@ -3,10 +3,14 @@ pipeline {
     stages {
         stage('build') {
             steps {
-            sh """
-		    npm install 
-            npm run test
-		    """
+            	nodejs('node14.2') {
+	            sh """
+		        npm --version
+			    npm install 
+	            npm run test
+			    """
+	            junit '**/reports/*.xml'      
+	            }
             }
         }
     }
