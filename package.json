@@ -1,7 +1,7 @@
 {
   "name": "cypress",
   "version": "1.0.0",
-  "description": "",
+  "description": "README.md",
   "main": "index.js",
   "dependencies": {
     "cypress": "^4.3.0"
@@ -13,5 +13,13 @@
     "cypress:open": "cypress open"
   },
   "author": "Francis",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kindredFP/cypress.git"
+  },
+  "bugs": {
+    "url": "https://github.com/kindredFP/cypress/issues"
+  },
+  "homepage": "https://github.com/kindredFP/cypress#readme"
 }
