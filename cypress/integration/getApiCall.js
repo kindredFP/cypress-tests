@@ -16,10 +16,11 @@ describe("/posts API", () => {
   })
 
 
+/*
     it('Force a test failure', () => {
    cy.request('POST', 'https://postman-echo.com/post').its('status')
       .should('equal', 204);
   })
-
+*/
 
 });

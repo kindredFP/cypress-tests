@@ -11,24 +11,24 @@ pipeline {
 	            }
             }
         }
-        post {
+    }
+    post {
 
-	        always {
+	    always {
 	            echo 'Always generate report.'
 		            junit '**/reports/*.xml'      
-	        }
-	        success {
+	    }
+	    success {
 	            echo 'I succeeeded!'
-	        }
-	        unstable {
+	    }
+	    unstable {
 	            echo 'I am unstable :/'
-	        }
-	        failure {
+	    }
+	    failure {
 	            echo 'I failed :('
-	        }
-	        changed {
+	    }
+	    changed {
 	            echo 'Things were different before...'
-	        }
-    	}
+	    }
     }
 }
