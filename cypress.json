@@ -4,6 +4,7 @@
  "reporter": "junit",
   "reporterOptions": {
     "mochaFile": "reports/my-test-output.xml",
-    "toConsole": true
+    "toConsole": true,
+    "jenkinsMode": true
   }
 }

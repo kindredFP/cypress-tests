@@ -8,9 +8,27 @@ pipeline {
 			    npm install 
 	            npm run test
 			    """
-	            junit '**/reports/*.xml'      
 	            }
             }
         }
+        post {
+
+	        always {
+	            echo 'Always generate report.'
+		            junit '**/reports/*.xml'      
+	        }
+	        success {
+	            echo 'I succeeeded!'
+	        }
+	        unstable {
+	            echo 'I am unstable :/'
+	        }
+	        failure {
+	            echo 'I failed :('
+	        }
+	        changed {
+	            echo 'Things were different before...'
+	        }
+    	}
     }
 }
