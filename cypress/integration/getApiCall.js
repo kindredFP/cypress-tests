@@ -1,7 +1,7 @@
 import { baseUrl } from '../../cypress';
 
-
 describe("/posts API", () => {
+
   it('Headers and content type check', () => {
     cy.request("posts")
       .its('headers')
@@ -16,9 +16,9 @@ describe("/posts API", () => {
   })
 
 
-    it('method, url and body check', () => {
+    it('Force a test failure', () => {
    cy.request('POST', 'https://postman-echo.com/post').its('status')
-      .should('equal', 200);
+      .should('equal', 204);
   })
 
 

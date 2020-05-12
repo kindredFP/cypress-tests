@@ -5,7 +5,6 @@ pipeline {
             steps {
             	nodejs('node14.2') {
 	            sh """
-		        npm --version
 			    npm install 
 	            npm run test
 			    """
