@@ -16,7 +16,7 @@ pipeline {
 
 	    always {
 	            echo 'Always generate report.'
-		            junit '**/reports/*.xml'      
+		        junit '**/reports/*.xml'      
 	    }
 	    success {
 	            echo 'I succeeeded!'
