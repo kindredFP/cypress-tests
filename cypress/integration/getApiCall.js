@@ -1,4 +1,3 @@
-import { baseUrl } from '../../cypress';
 
 describe("/posts API", () => {
 

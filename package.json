@@ -1,5 +1,5 @@
 {
-  "name": "cypress",
+  "name": "my_cypress_projects",
   "version": "1.0.0",
   "description": "README.md",
   "main": "index.js",
@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "cypress run --spec 'cypress/integration/getApiCall.js'",
+    "apitest": "cypress run --spec 'cypress/integration/getApiCall.js'",
     "e2e": "cypress run",
     "cypress:open": "cypress open"
   },
