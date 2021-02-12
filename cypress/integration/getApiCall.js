@@ -1,4 +1,4 @@
-
+/// <reference types="Cypress" />
 describe("/posts API", () => {
 
   it('Headers and content type check', () => {
@@ -34,23 +34,23 @@ describe("/posts API", () => {
   it('Individual Fields and Value Check', () => {
     cy.request('posts/1')
       .its('body')
-      .should('have.property', 'title','sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
+      .should('have.property', 'title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
   })
 
   it('Individual Fields and Value Check', () => {
     cy.request('posts/1')
       .its('body')
-      .should('have.property', 'title','sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
+      .should('have.property', 'title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
   })
 
-  it('Inner Fields Check', () => {
+  it('Inner Json Field Check', () => {
     cy.request('users/1')
       .its('body')
       .then((response) => {
-          //expect(response.body).to.have.property('errors[0].status')
-          const innerJson = response.address.geo;
-          expect(innerJson).to.have.property('lat')
-        })
+        //expect(response.body).to.have.property('errors[0].status')
+        const innerJson = response.address.geo;
+        expect(innerJson).to.have.property('lat')
+      })
   })
   /****
   Sample json with inner fields
@@ -78,4 +78,71 @@ describe("/posts API", () => {
   }
 }
   ****/
+
+  it('Verify different elements on different sections of the array', () => {
+    cy.request('users')
+      .its('body')
+      .then((response) => {
+
+        let firstElement = response[0].name;
+        let firstDataSet = JSON.stringify(response[0]);
+        let innerJsonValueZipCode = JSON.stringify(response[0].address.zipcode)
+
+        console.log("Logs in console tab in developer tools value of name in firstElement:  " + firstElement);
+        cy.log("Logs in Test Run and the value of the firstDateSet:  " + firstDataSet);
+        expect(firstElement).to.have.string('Leanne Graham');
+        expect(innerJsonValueZipCode).to.have.string('92998-3874');
+        expect(firstDataSet).to.have.string('{\"id\":1,\"name\":\"Leanne Graham\",\"username\":\"Bret\",\"email\":\"Sincere@april.biz\",\"address\":{\"street\":\"Kulas Light\",\"suite\":\"Apt. 556\",\"city\":\"Gwenborough\",\"zipcode\":\"92998-3874\",\"geo\":{\"lat\":\"-37.3159\",\"lng\":\"81.1496\"}},\"phone\":\"1-770-736-8031 x56442\",\"website\":\"hildegard.org\",\"company\":{\"name\":\"Romaguera-Crona\",\"catchPhrase\":\"Multi-layered client-server neural-net\",\"bs\":\"harness real-time e-markets\"}}')
+      })
+  })
+
+  /***** Sample of 2 elements that we access
+  {
+    "id": 1,
+    "name": "Leanne Graham",
+    "username": "Bret",
+    "email": "Sincere@april.biz",
+    "address": {
+      "street": "Kulas Light",
+      "suite": "Apt. 556",
+      "city": "Gwenborough",
+      "zipcode": "92998-3874",
+      "geo": {
+        "lat": "-37.3159",
+        "lng": "81.1496"
+      }
+    },
+    "phone": "1-770-736-8031 x56442",
+    "website": "hildegard.org",
+    "company": {
+      "name": "Romaguera-Crona",
+      "catchPhrase": "Multi-layered client-server neural-net",
+      "bs": "harness real-time e-markets"
+    }
+  },
+  {
+    "id": 2,
+    "name": "Ervin Howell",
+    "username": "Antonette",
+    "email": "Shanna@melissa.tv",
+    "address": {
+      "street": "Victor Plains",
+      "suite": "Suite 879",
+      "city": "Wisokyburgh",
+      "zipcode": "90566-7771",
+      "geo": {
+        "lat": "-43.9509",
+        "lng": "-34.4618"
+      }
+    },
+    "phone": "010-692-6593 x09125",
+    "website": "anastasia.net",
+    "company": {
+      "name": "Deckow-Crist",
+      "catchPhrase": "Proactive didactic contingency",
+      "bs": "synergize scalable supply-chains"
+    }
+  }, 
+ 
+   ***********/
 });

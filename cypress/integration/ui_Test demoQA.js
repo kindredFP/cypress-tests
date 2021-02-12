@@ -1,3 +1,5 @@
+///<reference types='cypress' />
+
 describe('Another UI Test', () => {
 
   it('Navigate to demoqa.com site and click on Elements Section', () => {

@@ -1,9 +1,14 @@
 describe('My UI Test', () => {
 
-  it('Navigate and click on button', () => {
-
+  // Run on each IT
+  beforeEach(() => {
     //Navigate to a page
     cy.visit('https://www.seleniumeasy.com/test/')
+  })
+
+  it('Navigate and click on button', () => {
+
+
 
     cy.log('Click on the button with id="btn_basic_example"')
     cy.get('#btn_basic_example').click()
@@ -19,8 +24,8 @@ describe('My UI Test', () => {
     cy.get('.form-group > #user-message').type('Hello')
     cy.get('#get-input > .btn').click()
 
-    // Verify your on right page using a string on page
-    cy.get('#display').contains('Hello')
+    // Assert successful display
+    cy.get('#display').contains('Hello').should('be.visible')
 
   })
 
@@ -32,7 +37,7 @@ describe('My UI Test', () => {
 
     // Selecting the dropdown value
     cy.get('#select-demo').select('Friday')
-    cy.get('.selected-value').contains('Friday')
+    cy.get('.selected-value').contains('Friday').should('be.visible')
   })
 
   it('Navigate and access sample tables', () => {
@@ -42,7 +47,7 @@ describe('My UI Test', () => {
     cy.get(':nth-child(3) > :nth-child(3) > ul > :nth-child(2) > a').click()
 
     cy.log('Verify a text on table')
-    cy.get('#task-table > tbody > :nth-child(4) > :nth-child(3)').contains('Emily John')
+    cy.get('#task-table > tbody > :nth-child(4) > :nth-child(3)').contains('Emily John').should('be.visible')
   })
 
 })
