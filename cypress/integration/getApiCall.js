@@ -90,6 +90,7 @@ describe("/posts API", () => {
 
         console.log("Logs in console tab in developer tools value of name in firstElement:  " + firstElement);
         cy.log("Logs in Test Run and the value of the firstDateSet:  " + firstDataSet);
+
         expect(firstElement).to.have.string('Leanne Graham');
         expect(innerJsonValueZipCode).to.have.string('92998-3874');
         expect(firstDataSet).to.have.string('{\"id\":1,\"name\":\"Leanne Graham\",\"username\":\"Bret\",\"email\":\"Sincere@april.biz\",\"address\":{\"street\":\"Kulas Light\",\"suite\":\"Apt. 556\",\"city\":\"Gwenborough\",\"zipcode\":\"92998-3874\",\"geo\":{\"lat\":\"-37.3159\",\"lng\":\"81.1496\"}},\"phone\":\"1-770-736-8031 x56442\",\"website\":\"hildegard.org\",\"company\":{\"name\":\"Romaguera-Crona\",\"catchPhrase\":\"Multi-layered client-server neural-net\",\"bs\":\"harness real-time e-markets\"}}')
@@ -145,4 +146,26 @@ describe("/posts API", () => {
   }, 
  
    ***********/
+
+  /**
+   * Looks like more control when we verify without its on the body.
+   */
+  it('Using without .its(body)', () => {
+    cy.request('users')
+      .then((response) => {
+
+        let responseBody = response.body;
+        let firstElement = responseBody[0].name; // access a specific entry
+        let firstDataSet = JSON.stringify(responseBody[0]); // access the full object
+        let innerJsonValueZipCode = JSON.stringify(responseBody[0].address.zipcode)
+
+        cy.log("FirstDateSet:  " + firstDataSet);
+        cy.log("responseBody:  " + responseBody);
+        expect(response.status).to.eq(200)
+        expect(response.body).to.have.length(10);
+        expect(firstElement).to.have.string('Leanne Graham');
+        expect(innerJsonValueZipCode).to.have.string('92998-3874');
+        expect(firstDataSet).to.have.string('{\"id\":1,\"name\":\"Leanne Graham\",\"username\":\"Bret\",\"email\":\"Sincere@april.biz\",\"address\":{\"street\":\"Kulas Light\",\"suite\":\"Apt. 556\",\"city\":\"Gwenborough\",\"zipcode\":\"92998-3874\",\"geo\":{\"lat\":\"-37.3159\",\"lng\":\"81.1496\"}},\"phone\":\"1-770-736-8031 x56442\",\"website\":\"hildegard.org\",\"company\":{\"name\":\"Romaguera-Crona\",\"catchPhrase\":\"Multi-layered client-server neural-net\",\"bs\":\"harness real-time e-markets\"}}')
+      })
+  })
 });
