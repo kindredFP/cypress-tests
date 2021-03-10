@@ -12,7 +12,8 @@
   "scripts": {
     "apitest": "cypress run --spec 'cypress/integration/getApiCall.js'",
     "e2e": "cypress run",
-    "cypress:open": "cypress open"
+    "cypress:open": "cypress open",
+    "test": "cypress run --spec 'cypress/integration/getApiCall.js'"
   },
   "author": "Francis",
   "license": "MIT",
