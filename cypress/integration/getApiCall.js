@@ -37,12 +37,6 @@ describe("/posts API", () => {
       .should('have.property', 'title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
   })
 
-  it('Individual Fields and Value Check', () => {
-    cy.request('posts/1')
-      .its('body')
-      .should('have.property', 'title', 'sunt aut facere repellat provident occaecati excepturi optio reprehenderit');
-  })
-
   it('Inner Json Field Check', () => {
     cy.request('users/1')
       .its('body')
@@ -148,7 +142,8 @@ describe("/posts API", () => {
    ***********/
 
   /**
-   * Looks like more control when we verify without its on the body.
+   * Looks like more control when we verify without 
+   * '.its('body')'
    */
   it('Using without .its(body)', () => {
     cy.request('users')

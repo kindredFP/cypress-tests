@@ -1,5 +1,3 @@
-README.md
-
 Cypress Proof of Concept to hit Rest APIs
 
 1.  npm install
@@ -15,5 +13,6 @@ cypress e2e
 Note:
 
 To run it locally:
-
 npm run cypress:open
+
+Added .travis.yml file to leverage https://travis-ci.org/
