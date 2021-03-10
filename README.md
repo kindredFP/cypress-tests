@@ -17,4 +17,4 @@ npm run cypress:open
 
 Any pull requests is now being deployed and tested using https://travis-ci.org/
 
-https://www.travis-ci.com/kindredFP/cypress-tests.svg?branch=master
+[![Build Status](https://www.travis-ci.com/kindredFP/cypress-tests.svg?branch=master)](https://www.travis-ci.com/kindredFP/cypress-tests)
