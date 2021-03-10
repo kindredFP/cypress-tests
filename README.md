@@ -15,4 +15,6 @@ Note:
 To run it locally:
 npm run cypress:open
 
-Added .travis.yml file to leverage https://travis-ci.org/
+Any pull requests is now being deployed and tested using https://travis-ci.org/
+
+https://www.travis-ci.com/kindredFP/cypress-tests.svg?branch=master
