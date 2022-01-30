@@ -3,4 +3,3 @@ cypress/videos
 cypress/screenshots
 reports
 .DS_Store
-node_modules
