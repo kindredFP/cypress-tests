@@ -13,7 +13,7 @@
     "apitest": "cypress run --spec 'cypress/integration/getApiCall.js'",
     "e2e": "cypress run",
     "cypress:open": "cypress open",
-    "test": "cypress run --spec 'cypress/integration/getApiCall.js'"
+    "test": "cypress run --spec 'cypress/integration/getApiCall.js,cypress/integration/ui_Test demoQA.js,cypress/integration/ui_Test_reactSite.js'"
   },
   "author": "Francis",
   "license": "MIT",
