@@ -22,13 +22,13 @@ describe('Another UI Test', () => {
     cy.get('#userName').type('Entering Full Name')
   })
 
-/* 
+
   it('Select Forms', () => {
 
     cy.log('Click on the Forms section - > Practice Form')
     cy.get('.header-wrapper').contains('Form').click()
     cy.get('.text').contains('Practice Form').click()
 
-  }) */
+  }) 
 
 })
