@@ -19,7 +19,7 @@ describe('Simple React UI Test', () => {
       cy.get('@communityMenu').click()
 
       // Click Courses Section
-      cy.get(':nth-child(3) > .css-19pur11').as('coursesLink')
+      cy.get('a[href="\/community\/courses.html"]').as('coursesLink')
       cy.get('@coursesLink').click()
 
       // Assert these values are showing on screen.
