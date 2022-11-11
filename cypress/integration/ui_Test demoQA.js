@@ -1,5 +1,11 @@
 ///<reference types='cypress' />
 
+Cypress.on('uncaught:exception', (err, runnable) => {
+  // returning false here prevents Cypress from
+  // failing the test
+  return false
+})
+
 describe('Another UI Test', () => {
 
   it('Navigate to demoqa.com site and click on Elements Section', () => {
@@ -13,16 +19,16 @@ describe('Another UI Test', () => {
     // Select Text Box
     cy.get('#item-0').click()
 
-    cy.get('#userName').type('Entering Full Name Field')
+    cy.get('#userName').type('Entering Full Name')
   })
 
-
+/* 
   it('Select Forms', () => {
 
     cy.log('Click on the Forms section - > Practice Form')
     cy.get('.header-wrapper').contains('Form').click()
     cy.get('.text').contains('Practice Form').click()
 
-  })
+  }) */
 
 })
